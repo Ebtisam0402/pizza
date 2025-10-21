@@ -10,6 +10,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/pizza-style.css">
+     <!-- Link to JavaScript -->
+    <script src="js/pizza.js"defer></script>
 </head>
 <body>
     <main>
@@ -29,10 +31,16 @@
                 <legend>Contact Info</legend>
                 <label for="fname">First Name:</label>
                 <input type="text" id="fname" name="fname">
+                <span id="err-fname" class="error">First name cannot be empty!</span>
+
                 <label for="lname">Last Name:</label>
                 <input type="text" id="lname" name="lname">
+                <span id="err-lname" class="error">Last name cannot be empty!</span>
+
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email">
+                <span id="err-email" class="error">Email cannot be empty!</span>
+
              </fieldset>
 
             <!-- Pickup or Delivery -->
@@ -46,6 +54,7 @@
                     <input type="radio" id="delivery" name="method"
                            value="delivery">Delivery
                 </label>
+                 <span id="err-method" class="error">Please select pickup or delivery</span>
             </fieldset>
 
             <!-- Toppings -->
@@ -70,6 +79,8 @@
                     <option value="medium">Medium</option>
                     <option value="large">Large</option>
                 </select>
+                <span id="err-size" class="error">Please select a size</span>
+
             </fieldset>
 
             <!-- Comment field -->

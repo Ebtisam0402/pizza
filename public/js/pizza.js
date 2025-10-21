@@ -1,5 +1,5 @@
 
-clearErrors();
+
 // When the form is submitted, validate
 document.getElementById('pizza-form').onsubmit = () =>{
 

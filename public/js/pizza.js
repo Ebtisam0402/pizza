@@ -1,7 +1,7 @@
 
 
 // When the form is submitted, validate
-document.getElementById('pizza-form').onsubmit = () =>{
+document.getElementById('pizza-form').onsubmit = () => {
 
     clearErrors();
 
@@ -30,7 +30,7 @@ isValid = false;
 // Validate method (pickup or delivery)
 let methodButtons = document.getElementsByName("method");
 let count = 0;
-for(let i=0; i<methodButtons.lenght; i++){
+for(let i=0; i < methodButtons.length; i++){
         if(methodButtons[i].checked){
             count++;
         }
@@ -53,8 +53,8 @@ return isValid;
 }
 
 function clearErrors(){
-    let errors = documentByClassName("error");
-    for(let i=0; i<errors.lenght; i++){
+    let errors = document.getElementsByClassName("error");
+    for(let i=0; i<errors.length; i++){
         errors[i].style.display = "none";
     }
 }

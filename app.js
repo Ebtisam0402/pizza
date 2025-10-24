@@ -62,7 +62,7 @@ orders.push(order);
 console.log(orders);
 
 // Send user to confirmation page
-//res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
+res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
 })
 
 //Start the server and make it listen on the port

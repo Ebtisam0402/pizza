@@ -28,23 +28,22 @@ app.get('/', (req,res) => {
 //Define a "contact-us" route
 app.get('/contact-us', (req,res) => {
    res.sendFile(`${import.meta.dirname}/views/contact.html`);  
-})
+});
 
 //Define a "confairmation" route
 app.get('/confirm', (req,res) => {
     
    res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
-})
+});
 
 //Define a "admin" route
 app.get('/admin', (req,res) => {
     res.send(orders);
    // res.sendFile(`${import.meta.dirname}/views/admin.html`);  
-})
+});
 //Define a "submit-order" route
 app.post('/submit-order', (req,res) => {
-    
-   //res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
+     
     //console.log(req.body);
    // Create a Json object to store the data
    const order = {

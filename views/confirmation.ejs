@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Pizza</title>
 
-     <!-- Link to JavaScript -->
+       <!-- Link to JavaScript -->
     <script src="js/pizza.js"defer></script>
 
     <!-- Favicon -->
@@ -13,23 +13,28 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/pizza-style.css">
-    
+  
 </head>
 <body>
      
     <main>
         <header>
             <img src="images/pizza-home.jpeg" alt="pizza on tray">
-           
             <h1>Home pizza</h1>
             <p id="tagline">The best pizza GRC students have ever tasted!</p>
             <hr>
             <p>Poppa’s Pizza serves up fresh, handcrafted pizzas with 
                 bold flavors and a warm, family-friendly vibe.</p>
              </header>
-
-       <h1>Admin Page!</h1>
-       
+             
+       <h1>Thank you for your order, <%= order.fname %>!</h1>
+       <h2>Order Summary</h2>
+       <p>Name: <%= order.fname%> <%= order.lname%></p>
+       <p>Email: <%= order.email%></p>
+       <p>Toppings: <%= order.toppings%></p>
+       <p>Size: <%= order.size%></p>
+       <p>Comment: <%= order.comment%></p>
+       <p>Date/Time: <%= order.timestamp.toLocaleString()%></p>
     <main>
 </body>
 </html>

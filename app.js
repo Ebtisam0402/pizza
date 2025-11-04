@@ -5,6 +5,9 @@ import express from 'express';
 // Create an instance of an Express application
 const app = express();
 
+// Set EJS as our view engine
+app.set('view engine', 'ejs');
+
 //Enable static file serving
 app.use(express.static('public'));
 
@@ -22,23 +25,23 @@ const PORT = 3000;
 // res: allows us to send back a response to the client
 app.get('/', (req,res) => {
     //send a response to the client
-    res.sendFile(`${import.meta.dirname}/views/home.html`);
+    res.render('home');
 });
 
 //Define a "contact-us" route
 app.get('/contact-us', (req,res) => {
-   res.sendFile(`${import.meta.dirname}/views/contact.html`);  
+   res.render ('contact');  
 });
 
 //Define a "confairmation" route
 app.get('/confirm', (req,res) => {
     
-   res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
+   res.render('confirmation');  
 });
 
 //Define a "admin" route
 app.get('/admin', (req,res) => {
-    res.send(orders);
+    res.render('admin', {orders});
    // res.sendFile(`${import.meta.dirname}/views/admin.html`);  
 });
 //Define a "submit-order" route
@@ -53,7 +56,8 @@ app.post('/submit-order', (req,res) => {
   method:req.body.method,
   toppings: req.body.toppings,
   size: req.body.size,
-  comment: req.body.comment
+  comment: req.body.comment,
+  timestamp: new Date()
 };
 
 //Add order to array
@@ -61,7 +65,7 @@ orders.push(order);
 console.log(orders);
 
 // Send user to confirmation page
-res.sendFile(`${import.meta.dirname}/views/confirmation.html`);  
+res.render('confirmation', {order});  
 });
 
 //Start the server and make it listen on the port
